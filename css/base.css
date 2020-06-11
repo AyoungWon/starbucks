@@ -1,0 +1,12 @@
+/*********** Normalize ***********/
+html, body, h1, h2, h3, h4, h5, h6, p, div, input, textarea, select, header, section, article, aside, footer, form, ul ,li, nav  {margin: 0; padding: 0; box-sizing: border-box;}
+img {vertical-align: bottom;}
+table {border-collapse: collapse;}
+ul, ol, li {list-style: none;}
+
+/*********** common ***********/
+.clear:after {content: ""; display: block; clear: both;}
+.img {width: 100%;}
+.imgx {max-width: 100%;}
+.pointer {cursor: pointer;}
+
