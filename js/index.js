@@ -1,37 +1,64 @@
 /****************************** 사전지식 **********************************/
+/* 
+var css = {"position": "absolute", "top": "50%", "transform": "translateY(-50%)", "font-size": "5rem", "z-index": 900, "color": "#fff"};
+var $btLeft = $('<i class="bt-lt fa fa-angle-left></i>').appendTo(".main-wrap").css(css);
+var $btRight = $('<i class="bt-rt fa fa-angle-right></i>').appendTo(".main-wrap").css(css);
+$btLeft.css("left", "2rem");
+$btRight.css("right", "2rem"); 
+*/
 
 
 
 
 /****************************** 전역설정 **********************************/
-mainSlide();
+mainSlide(".main-wrap");
 
 
 /****************************** 사용자함수 **********************************/
-function mainSlide(){
+function mainSlide(container){
 var now = 0;
-var $slide= $(".main-wrap").find(".banner").css("transition","all 0.5s").remove();
+var $container = $(container).addClass("slide-wrap");
+var $slide= $container.children("*").addClass("slide").css("transition","all 0.5s");
+var $btPrev = $('<div class="bt bt-prev"></div>').appendTo($container).click(onPrev);
+var $btNext = $('<div class="bt bt-next"></div>').appendTo($container).click(onNext);
 var last = $slide.length -1;
 
-var css = {"position": "absolute", "top": "50%", "transform": "translateY(-50%)", "font-size": "5rem", "z-index": 900, "color": "#fff"};
-var $btLeft = $('<i class="bt-lt fa fa-angle-left></i>').appendTo(".main-wrap").css(css);
-var $btRight = $('<i class="bt-rt fa fa-angle-right></i>').appendTo(".main-wrap").css(css);
-$btLeft.css("left", "2rem");
-$btRight.css("right", "2rem");
+
 
 
 function init() {
-	$($slide[now]).appendTo('.main-wrap');
+	$btPrev.show();
+	$btNext.show();
+	$container.children(".slide").remove();
+	$($slide[now]).appendTo($container);
+}
+
+
+function ani() {
+	$($slide[now]).appendTo($container).css({"opacity": 0, "transform": "scale(1.2)"});
+	setTimeout(function(){
+		$container.children(".slide").eq(0).css({"opacity": 0, "transform": "scale(0.7)"});
+		$container.children(".slide").eq(1).css({"opacity": 1, "transform": "scale(1)"});
+		setTimeout(init, 500);
+	},0);
+}
+
+function onPrev (){
+	$(this).hide();
+	now = (now == 0) ? now = last : now - 1;
+	ani();
+}
+function onNext (){
+	$(this).hide();
 	now = (now == 2) ? now = 0 : now + 1;
-	$($slide[now]).appendTo('.main-wrap').css({"opacity": 0, "transform": "scale(1.2)"});
+	ani();
 }
-function onClick() {
-	$(".banner").eq(0).css({"opacity": 0, "transform": "scale(0.7)"});
-	$(".banner").eq(1).css({"opacity": 1, "transform": "scale(1)"});
-	setTimeout(init, 500);
-}
-$(".main-wrap").click(onClick);
 init();
+
+
+
+
+
 }
 
 /****************************** 이벤트함수 **********************************/
