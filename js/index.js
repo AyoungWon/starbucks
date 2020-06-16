@@ -81,7 +81,7 @@ function mainAni() {
 		"transform": "translateY(50px)",
 		"opacity": 0
 	});
-	setTimeout(function(){
+	setTimeout(function () {
 		$(".main-wrap").find(".slogan").html(mainTitles[mainNow]);
 		$(".main-wrap").find(".writer > span").html(mainWriters[mainNow]);
 		$(".main-wrap").find(".slogan").css({
@@ -92,7 +92,7 @@ function mainAni() {
 			"transform": "translateY(0)",
 			"opacity": 1
 		});
-	},1000);
+	}, 1000);
 }
 
 function onMainPrev() {
@@ -108,12 +108,96 @@ $(".main-wrap > .bt-prev").click(onMainPrev);
 $(".main-wrap > .bt-next").click(onMainNext);
 
 
+/******************* 슬라이드 직접코딩2 ********************/
+
+var prdNow = 0;
+var prdLast = 0;
+var prds = [];
+var prdArr = [];
+var prdSize = 6; //보이는 갯수에 따라 수시로 변함
+var prdWid = 0;
+var prdLeft = 0;
+var prdNext = 0;
+$(".prd-wrapper > .bt-left").click(onPrdLeft);
+$(".prd-wrapper > .bt-right").click(onPrdRight);
+
+$.get("../json/prds.json", onPrdLoad);
+
+function onPrdLoad(r) {
+	prdLast = r.prds.length - 1;
+	console.log(r.prds)
+	var html = '';
+	for (var i in r.prds) {
+		html = '<li class="prd">';
+		html += '<div class="prd-img"><img src="' + r.prds[i].src + '" class="img"></div>';
+		html += '<div class="prd-title">' + r.prds[i].title + '</div>';
+		html += '<div class="prd-price">' + r.prds[i].price + '</div>';
+		html += '</li>';
+		prds.push($(html));
+	}
+	prdInit();
+}
+
+function prdInit() {
 
 
+	prdArr = [];
+	prdArr[1] = prdNow;
+	prdArr[0] = (prdNow == 0) ? prdLast : prdNow - 1;
+	//순서에 맞는 배열 만들기
+	for (var i = 2; i < prdSize; i++) {
+		prdArr[i] = (prdArr[i - 1] == prdLast) ? 0 : prdArr[i - 1] + 1;
+	}
+	//배열에 데이터 넣기
+	for (var i = 0; i < prdArr.length; i++) $(prds[prdArr[i]]).clone().appendTo(".prd-wrap");
+}
+
+function onPrdLeft() {
+	prdWid = $(".prd-wrap > .prd").innerWidth();
+	prdLeft = 0;
+	prdNow = (prdNow == 0) ? prdLast : prdNow - 1;
+	prdAni();
+}
+
+function onPrdRight() {
+	prdWid = $(".prd-wrap > .prd").innerWidth();
+	prdLeft = -prdWid * 2 + "px";
+	prdNow = (prdNow == prdLast) ? 0 : prdNow + 1;
+	prdAni();
+}
+
+function prdAni() {
+	$(".prd-wrap").stop().animate({
+		"left": prdLeft
+	}, 500, function () {
+		$(".prd-wrap").empty().css({
+			"left": -prdWid + "px"
+		});
+		prdInit();
+	});
+
+}
 /******************* 이벤트 함수 ********************/
 function onResize() {
 	this.wid = $(this).innerWidth();
 	this.hei = $(this).innerHeight();
+	if (wid > 992) {
+		prdSize = 6;
+		prdWid = '16.67%';
+		prdNext = '-'
+	} else if (wid > 767) {
+		prdSize = 6;
+		prdWid = '16.67%'
+	} else if (wid > 479) {
+		prdSize = 6;
+		prdWid = '16.67%'
+	} else if (wid >= 479) {
+		prdSize = 6;
+		prdWid = '16.67%'
+	}
+
+	/* 	prdWid = $(".prd-wrap > .prd").innerWidth();
+		$(".prd-wrap").css("left",-prdWid+"px"); */
 }
 
 function onScroll() {
@@ -139,9 +223,9 @@ function onScroll() {
 	var locGap = 0;
 	var speed = 400;
 	//console.log(scTop + hei,locStart,locEnd);
-	if(scTop + hei > locStart && scTop + hei < locEnd){
-	locGap = (speed/2) - Math.round((scTop + hei - locStart) / (locEnd - locStart) * speed); //150 ~ -150
-	$(".loc-wrap").css("background-position-y",locGap+"%");
+	if (scTop + hei > locStart && scTop + hei < locEnd) {
+		locGap = (speed / 2) - Math.round((scTop + hei - locStart) / (locEnd - locStart) * speed); //150 ~ -150
+		$(".loc-wrap").css("background-position-y", locGap + "%");
 
 	}
 }

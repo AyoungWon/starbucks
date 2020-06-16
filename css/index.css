@@ -66,43 +66,63 @@ h1,h2,h3,h4,h5, .rc {font-family: 'Roboto Condensed', sans-serif; font-weight: b
 
 
 /************loc-wrap ****************/
-.loc-wrap {position: relative; background-image: url(../img/c-sl-005.jpg); background-size: auto 120%; background-position-x: center;}
+.loc-wrap {position: relative; background-image: url(../img/c-sl-005.jpg); background-size: cover;background-position-x: center;}
 .loc-wrap::before {display: block; width: 100%; height: 100%; content: ""; background-color: rgba(0,0,0,0.4); position: absolute;}
-.loc-wrap .title {font-size: 2rem; color: #fff; text-align: center;}
+.loc-wrap .title {font-size: 3rem; color: #fff; text-align: center;}
 .loc-wrap .store-wrap {display: flex; justify-content: space-between;}
-.loc-wrap .store {flex: 32% 0 0 ; background-color: #fff; padding: 1.75rem;}
-.loc-wrap .store > .photo {background-color: #e7b35a;  cursor: pointer;}
+.loc-wrap .store {flex: 32% 0 0; background-color: #fff; padding: 1.75rem;}
+.loc-wrap .store > .photo {background-color: #e6ac65; cursor: pointer;}
 .loc-wrap .store > .photo > img {transition: all 0.5s;}
 .loc-wrap .store > .photo:hover > img {opacity: 0.6;}
 .loc-wrap .store > .cont {line-height: 1.75; color: #999; margin: 1.25rem 0;}
-.loc-wrap .store > div:not(.photo) {color: #333; padding: 0.5rem;}
-.loc-wrap .store > .bt-map {margin-top: 2rem;}
+.loc-wrap .store > div:not(.photo) {color: #333; padding: 0.5rem 0;}
+.loc-wrap .store > .bt-map {margin-top: 1.5rem;}
 .loc-wrap .store i.fa {width: 2rem;}
 /************ special-wrap ****************/
 .special-wrap .title {font-size: 2rem; color: #333; text-align: center;}
-.prd-stage {width: 100%; border: 1px solid blue; }
-.prd-stage .prd-wrap {width: 150%; position: relative; left: -25%; display: flex; border: 1px solid red;}
-.prd-stage .prd {flex: 16.67%; padding: 1em;font-family: 'Roboto Condensed', sans-serif; font-size: 1rem; font-weight: bold; text-align: center;}
+.prd-wrapper {position: relative;}
+.prd-wrapper .bt {color: #e7b35a; font-size: 2em; cursor: pointer; position: absolute; z-index: 800; top: 50%; transform: translateY(-50%);}
+.prd-wrapper .bt.bt-left {left: -0.75em;}
+.prd-wrapper .bt.bt-right {right: -0.75em;}
+
+.prd-stage {width: 100%;position: relative; /* overflow: hidden; */}
+.prd-stage .prd-wrap {width: 150%; position: relative; left: -25%; display: flex; }
+.prd-stage .prd {flex: 16.6667 0 0; padding: 1em;font-family: 'Roboto Condensed', sans-serif; font-size: 1rem; font-weight: bold; text-align: center;}
 .prd-stage .prd-img {border-radius: 50%; overflow: hidden; background-color: #e7b35a; cursor: pointer;}
 .prd-stage .prd-img img {transition: all 0.5s; }
 .prd-stage .prd-img:hover img {opacity: 0.6; }
 .prd-stage .prd-title {font-size: 1.5em; color: #333; padding: 0.75em 0 0.25em 0;}
 .prd-stage .prd-price {font-size: 1.25em; color: #e7b35a;}
+
 /************ ****************/
 /************ ****************/
 /************ ****************/
 /************ ****************/
 /************ responese ****************/
 
-@media screen and (max-width:991px) {
+@media screen and (max-width: 1600px) {
+	.loc-wrap {background-size: auto 120%;}
+}
+
+@media screen and (max-width: 991px) {
 	.wrapper {padding: 5rem 2%;}
 	.about-wrap {display: block;}
 	.about-wrap > .photos {width: 60%; margin: 0 auto 2rem auto;}
 	.loc-wrap .store-wrap {display: block;}
 	.loc-wrap .store {width: 70%; margin: 2% auto;}
+	.prd-stage .prd-wrap {left: -33.3334%;}
+	.prd-stage .prd {flex: 20% 0 0}
 }
-@media screen and (max-width:767px) {
+
+@media screen and (max-width: 767px) {
 	.wrapper {padding: 5rem 3%;}
 	.about-wrap > .photos {display: none;}
-	.loc-wrap .store {width: 90%; }
+	.loc-wrap .store {width: 90%; margin: 2% auto;}
+	.prd-stage .prd-wrap {left: -50%;}
+	.prd-stage .prd {flex: 25% 0 0}
+}
+
+@media screen and (max-width: 480px) {
+	.prd-stage .prd-wrap {left: -100%;}
+	.prd-stage .prd {flex: 33.3333% 0 0}
 }
