@@ -109,74 +109,53 @@ $(".main-wrap > .bt-next").click(onMainNext);
 
 
 /******************* 슬라이드 직접코딩2 ********************/
-
-var prdNow = 0;
-var prdLast = 0;
-var prds = [];
-var prdArr = [];
-var prdSize = 6; //보이는 갯수에 따라 수시로 변함
-var prdWid = 0;
-var prdLeft = 0;
-var prdNext = 0;
+var prdNow = 0,  prdSize = 6, prdLast, prdLeft, prdTar;
+var prds = [], prdArr = [];
 $(".prd-wrapper > .bt-left").click(onPrdLeft);
 $(".prd-wrapper > .bt-right").click(onPrdRight);
 
 $.get("../json/prds.json", onPrdLoad);
-
 function onPrdLoad(r) {
 	prdLast = r.prds.length - 1;
-	console.log(r.prds)
 	var html = '';
-	for (var i in r.prds) {
-		html = '<li class="prd">';
-		html += '<div class="prd-img"><img src="' + r.prds[i].src + '" class="img"></div>';
-		html += '<div class="prd-title">' + r.prds[i].title + '</div>';
-		html += '<div class="prd-price">' + r.prds[i].price + '</div>';
+	for(var i in r.prds) {
+		html  = '<li class="prd">';
+		html += '	<div class="prd-img"><img src="'+r.prds[i].src+'" class="img"></div>';
+		html += '	<div class="prd-title">'+r.prds[i].title+'</div>';
+		html += '	<div class="prd-price">'+r.prds[i].price+'</div>';
 		html += '</li>';
-		prds.push($(html));
+		prds.push($(html));		
 	}
 	prdInit();
 }
 
 function prdInit() {
-
-
 	prdArr = [];
 	prdArr[1] = prdNow;
 	prdArr[0] = (prdNow == 0) ? prdLast : prdNow - 1;
-	//순서에 맞는 배열 만들기
-	for (var i = 2; i < prdSize; i++) {
-		prdArr[i] = (prdArr[i - 1] == prdLast) ? 0 : prdArr[i - 1] + 1;
-	}
-	//배열에 데이터 넣기
-	for (var i = 0; i < prdArr.length; i++) $(prds[prdArr[i]]).clone().appendTo(".prd-wrap");
+	for(var i=2; i<prdSize; i++) prdArr[i] = (prdArr[i-1] == prdLast) ? 0 : prdArr[i-1] + 1;
+	for(var i=0; i<prdArr.length; i++) $(prds[prdArr[i]]).clone().appendTo(".prd-wrap");
 }
 
 function onPrdLeft() {
-	prdWid = $(".prd-wrap > .prd").innerWidth();
-	prdLeft = 0;
+	prdTar = 0;
 	prdNow = (prdNow == 0) ? prdLast : prdNow - 1;
 	prdAni();
 }
 
 function onPrdRight() {
-	prdWid = $(".prd-wrap > .prd").innerWidth();
-	prdLeft = -prdWid * 2 + "px";
+	prdTar = prdLeft * 2 + "%";
 	prdNow = (prdNow == prdLast) ? 0 : prdNow + 1;
 	prdAni();
 }
 
 function prdAni() {
-	$(".prd-wrap").stop().animate({
-		"left": prdLeft
-	}, 500, function () {
-		$(".prd-wrap").empty().css({
-			"left": -prdWid + "px"
-		});
+	$(".prd-wrap").stop().animate({"left": prdTar}, 500, function(){
+		$(this).empty().css({"left": prdLeft+"%"});
 		prdInit();
 	});
-
 }
+
 /******************* location 동적 생성 ********************/
 $.get("../json/locations.json", onLocationLoad);
 
@@ -260,8 +239,99 @@ function onMenuLoad(r) {
 
 
 
+/******************* news 동적생성 ********************/
 
+var newsNow = 0,  newsSize = 6, newsLast, newsLeft, newsTar;
+var newss = [], newsArr = [];
+$(".news-wrapper > .bt-left").click(onnewsLeft);
+$(".news-wrapper > .bt-right").click(onnewsRight);
+
+$.get("../json/news.json", onnewsLoad);
+function onnewsLoad(r) {
+	newsLast = r.news.length - 1;
+	var html = '';
+	for(var i in r.news) {
+		html = '<li class="news">';
+		html += '<div class="news-img">';
+		html += '<img src="../img/c-sl-004-768x512.jpg" alt="뉴스" class="img">';
+		html += '<div class="badge-tag">';
+		html += '<div class="badge badge-recipes">Recipes</div>';
+		html += '<div class="badge badge-news">News</div>';
+		html += '</div>';
+		html += '<div class="badge-date">';
+		html += '<div class="month">JAN</div>';
+		html += '<div class="day">19</div>';
+		html += '</div>';
+		html += '</div>';
+		html += '<div class="news-title">Venenatis efficitur at sit amet lorem</div>';
+		html += '<div class="news-tag">';
+		html += '<span class="tag">Recipes</span>';
+		html += '<span class="tag">By james</span>';
+		html += '<span class="tag">19th January 2020</span>';
+		html += '<span class="tag">1 Comment</span>';
+		html += '</div>';
+		html += '<div class="news-cont">Nunc lacus dui, hendrerit ut ligula vitae, hendrerit aliquet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.';
+		html += '</div>';
+		html += '<button type="button" class="bt-ghost bt-more">Read more <span >▶</span></button>';
+		html += '</li>';
+		newss.push($(html));		
+	}
+	newsInit();
+}
+
+function newsInit() {
+	newsArr = [];
+	newsArr[1] = newsNow;
+	newsArr[0] = (newsNow == 0) ? newsLast : newsNow - 1;
+	for(var i=2; i<newsSize; i++) newsArr[i] = (newsArr[i-1] == newsLast) ? 0 : newsArr[i-1] + 1;
+	for(var i=0; i<newsArr.length; i++) $(newss[newsArr[i]]).clone().appendTo(".news-wrap");
+}
+
+function onnewsLeft() {
+	newsTar = 0;
+	newsNow = (newsNow == 0) ? newsLast : newsNow - 1;
+	newsAni();
+}
+
+function onnewsRight() {
+	newsTar = newsLeft * 2 + "%";
+	newsNow = (newsNow == newsLast) ? 0 : newsNow + 1;
+	newsAni();
+}
+
+function newsAni() {
+	$(".news-wrap").stop().animate({"left": newsTar}, 500, function(){
+		$(this).empty().css({"left": newsLeft+"%"});
+		newsInit();
+	});
+}
+
+
+html += '<li class="news">';
+html += '<div class="news-img">';
+html += '<img src="../img/c-sl-004-768x512.jpg" alt="뉴스" class="img">';
+html += '<div class="badge-tag">';
+html += '<div class="badge badge-recipes">Recipes</div>';
+html += '<div class="badge badge-news">News</div>';
+html += '</div>';
+html += '<div class="badge-date">';
+html += '<div class="month">JAN</div>';
+html += '<div class="day">19</div>';
+html += '</div>';
+html += '</div>';
+html += '<div class="news-title">Venenatis efficitur at sit amet lorem</div>';
+html += '<div class="news-tag">';
+html += '<span class="tag">Recipes</span>';
+html += '<span class="tag">By james</span>';
+html += '<span class="tag">19th January 2020</span>';
+html += '<span class="tag">1 Comment</span>';
+html += '</div>';
+html += '<div class="news-cont">Nunc lacus dui, hendrerit ut ligula vitae, hendrerit aliquet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.';
+html += '</div>';
+html += '<button type="button" class="bt-ghost bt-more">Read more <span >▶</span></button>';
+html += '</li>';
 /******************* 이벤트 함수 ********************/
+
 function onResize() {
 	this.wid = $(this).innerWidth();
 	this.hei = $(this).innerHeight();
