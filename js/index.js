@@ -337,9 +337,9 @@ function onPressLoad(r) {
 	var html;
 	for (var i in r.press) {
 		html = '<li class="press">';
-		html += '<div class="logo"><img src="'+r.press[i].logo+'" alt="로고"></div>';
-		html += '<div class="cont">'+r.press[i].content+'</div>';
-		html += '<div class="writer rc">'+r.press[i].writer+'</div>';
+		html += '<div class="logo"><img src="' + r.press[i].logo + '" alt="로고"></div>';
+		html += '<div class="cont">' + r.press[i].content + '</div>';
+		html += '<div class="writer rc">' + r.press[i].writer + '</div>';
 		html += '</li>';
 		$(".press-ul").append(html);
 	}
@@ -349,8 +349,8 @@ function onPressLoad(r) {
 
 /******************* 이벤트 함수 ********************/
 function onResize() {
-	this.wid = $(this).innerWidth();
-	this.hei = $(this).innerHeight();
+	wid = $(this).innerWidth();
+	hei = $(this).innerHeight();
 	if (wid > 991) {
 		prdLeft = -25;
 		newsLeft = -33.3333;
@@ -395,8 +395,6 @@ function onScroll() {
 		locGap = (speed / 2) - Math.round((scTop + hei - locStart) / (locEnd - locStart) * speed);
 		$(".loc-wrap").css("background-position-y", locGap + "%");
 	}
-}
-
 	// .loc-wrap의 background-position-y 변화
 	var pressStart = $(".press-wrap").offset().top;
 	var pressHei = $(".press-wrap").innerHeight();
@@ -404,9 +402,12 @@ function onScroll() {
 	var pressGap = 0;
 	var pressSpeed = 200;
 	if (scTop + hei > pressStart && scTop + hei < pressEnd) {
-		pressGap = (speed / 2) - Math.round((scTop + hei - pressStart) / (pressEnd - pressStart) * PressSpeed);
+		pressGap = (speed / 2) - Math.round((scTop + hei - pressStart) / (pressEnd - pressStart) * pressSpeed);
 		$(".press-wrap").css("background-position-y", pressGap + "%");
 	}
+}
+
+
 /******************* 이벤트 설정 ********************/
 $(window).resize(onResize).trigger("resize");
 $(window).scroll(onScroll).trigger("scroll");
