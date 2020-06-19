@@ -354,6 +354,7 @@ function onResize() {
 	if (wid > 991) {
 		prdLeft = -25;
 		newsLeft = -33.3333;
+		onNaviHide();
 	} else if (wid > 767) {
 		prdLeft = -33.3333;
 		newsLeft = -50;
@@ -416,14 +417,16 @@ function onTop(){
 
 
 function onNaviShow() {
-	$(".header .bt-close").css("opacity",1);
 	$(".navi-mo").css("display","block");
 	setTimeout(function(){
+		$(".navi-mo").css("background-color","rgba(0,0,0,0.6)")
+		$(".header .bt-close").css("opacity",1);
 		$(".navi-mo").find(".navi-wing").css("right",0);
 	},0);
 
 }
 function onNaviHide() {
+	$(".navi-mo").css("background-color","transperant");
 	$(this).stop().animate({"opacity":0},500,function(){
 		$(".navi-mo").find(".navi-wing").css("right","-320px");
 		setTimeout(function(){
