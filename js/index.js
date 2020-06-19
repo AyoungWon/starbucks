@@ -241,38 +241,37 @@ function onMenuLoad(r) {
 
 /******************* news 동적생성 ********************/
 
-var newsNow = 0,  newsSize = 6, newsLast, newsLeft, newsTar;
+var newsNow = 0,  newsSize = 5, newsLast, newsLeft, newsTar;
 var newss = [], newsArr = [];
-$(".news-wrapper > .bt-left").click(onnewsLeft);
-$(".news-wrapper > .bt-right").click(onnewsRight);
+$(".news-wrapper > .bt-left").click(onNewsLeft);
+$(".news-wrapper > .bt-right").click(onNewsRight);
 
 $.get("../json/news.json", onnewsLoad);
 function onnewsLoad(r) {
 	newsLast = r.news.length - 1;
 	var html = '';
 	for(var i in r.news) {
-		html = '<li class="news">';
+		html  = '<li class="news">';
 		html += '<div class="news-img">';
-		html += '<img src="../img/c-sl-004-768x512.jpg" alt="뉴스" class="img">';
+		html += '<img src="'+r.news[i].src+'" class="img">';
 		html += '<div class="badge-tag">';
-		html += '<div class="badge badge-recipes">Recipes</div>';
-		html += '<div class="badge badge-news">News</div>';
+		for(var j in r.news[i].badge) {
+			html += '<div class="badge">'+r.news[i].badge[j]+'</div>';
+		}
 		html += '</div>';
 		html += '<div class="badge-date">';
-		html += '<div class="month">JAN</div>';
-		html += '<div class="day">19</div>';
+		html += '<div class="month">'+moment(r.news[i].date).format('MMM')+'</div>';
+		html += '<div class="day">'+moment(r.news[i].date).format('DD')+'</div>';
 		html += '</div>';
 		html += '</div>';
-		html += '<div class="news-title">Venenatis efficitur at sit amet lorem</div>';
+		html += '<div class="news-title">'+r.news[i].title+'</div>';
 		html += '<div class="news-tag">';
-		html += '<span class="tag">Recipes</span>';
-		html += '<span class="tag">By james</span>';
-		html += '<span class="tag">19th January 2020</span>';
-		html += '<span class="tag">1 Comment</span>';
+		for(var j in r.news[i].tag) {
+			html += '<span class="tag">'+r.news[i].tag[j]+'</span>';
+		}
 		html += '</div>';
-		html += '<div class="news-cont">Nunc lacus dui, hendrerit ut ligula vitae, hendrerit aliquet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.';
-		html += '</div>';
-		html += '<button type="button" class="bt-ghost bt-more">Read more <span >▶</span></button>';
+		html += '<div class="news-cont">'+r.news[i].cont+'</div>';
+		html += '<button class="bt-ghost bt-more">Read more <span>▶</span></button>';
 		html += '</li>';
 		newss.push($(html));		
 	}
@@ -287,13 +286,13 @@ function newsInit() {
 	for(var i=0; i<newsArr.length; i++) $(newss[newsArr[i]]).clone().appendTo(".news-wrap");
 }
 
-function onnewsLeft() {
+function onNewsLeft() {
 	newsTar = 0;
 	newsNow = (newsNow == 0) ? newsLast : newsNow - 1;
 	newsAni();
 }
 
-function onnewsRight() {
+function onNewsRight() {
 	newsTar = newsLeft * 2 + "%";
 	newsNow = (newsNow == newsLast) ? 0 : newsNow + 1;
 	newsAni();
@@ -305,82 +304,49 @@ function newsAni() {
 		newsInit();
 	});
 }
-
-
-html += '<li class="news">';
-html += '<div class="news-img">';
-html += '<img src="../img/c-sl-004-768x512.jpg" alt="뉴스" class="img">';
-html += '<div class="badge-tag">';
-html += '<div class="badge badge-recipes">Recipes</div>';
-html += '<div class="badge badge-news">News</div>';
-html += '</div>';
-html += '<div class="badge-date">';
-html += '<div class="month">JAN</div>';
-html += '<div class="day">19</div>';
-html += '</div>';
-html += '</div>';
-html += '<div class="news-title">Venenatis efficitur at sit amet lorem</div>';
-html += '<div class="news-tag">';
-html += '<span class="tag">Recipes</span>';
-html += '<span class="tag">By james</span>';
-html += '<span class="tag">19th January 2020</span>';
-html += '<span class="tag">1 Comment</span>';
-html += '</div>';
-html += '<div class="news-cont">Nunc lacus dui, hendrerit ut ligula vitae, hendrerit aliquet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.';
-html += '</div>';
-html += '<button type="button" class="bt-ghost bt-more">Read more <span >▶</span></button>';
-html += '</li>';
 /******************* 이벤트 함수 ********************/
-
 function onResize() {
 	this.wid = $(this).innerWidth();
 	this.hei = $(this).innerHeight();
-	if (wid > 992) {
-		prdSize = 6;
-		prdWid = '16.67%';
-		prdNext = '-'
-	} else if (wid > 767) {
-		prdSize = 6;
-		prdWid = '16.67%'
-	} else if (wid > 479) {
-		prdSize = 6;
-		prdWid = '16.67%'
-	} else if (wid >= 479) {
-		prdSize = 6;
-		prdWid = '16.67%'
+	if(wid > 991) {
+		prdLeft = -25;
+		newsLeft = -33.3333;
 	}
-
-	/* 	prdWid = $(".prd-wrap > .prd").innerWidth();
-		$(".prd-wrap").css("left",-prdWid+"px"); */
+	else if(wid > 767) {
+		prdLeft = -33.3333;
+		newsLeft = -50;
+	}
+	else if(wid > 479) {
+		prdLeft = -50;
+		newsLeft = -100;
+	}
+	else if(wid <= 479) {
+		prdLeft = -100;
+		newsLeft = -100;
+	}
+	$(".prd-wrap").css("left", prdLeft+"%");
+	$(".news-wrap").css("left", newsLeft+"%");
 }
 
 function onScroll() {
-	//header의 위치
+	// header 위치
 	this.scTop = $(this).scrollTop();
-	if (scTop > hei) {
-		$(".header").css({
-			"top": 0,
-			"bottom": "auto",
-			"position": "fixed"
-		});
-	} else {
-		$(".header").css({
-			"top": "auto",
-			"bottom": 0,
-			"position": "absolute"
-		});
+	if(scTop > hei) {
+		$(".header").css({"top": 0, "bottom": "auto", "position": "fixed"});
 	}
-	// .loc-wrap의 background-position-y값 변화
-	var locHei = $(".loc-wrap").innerHeight();
+	else {
+		$(".header").css({"top": "auto", "bottom": 0, "position": "absolute"});
+	}
+
+	// .loc-wrap의 background-position-y 변화
 	var locStart = $(".loc-wrap").offset().top;
+	var locHei = $(".loc-wrap").innerHeight();
 	var locEnd = locStart + locHei + hei;
 	var locGap = 0;
 	var speed = 400;
-	//console.log(scTop + hei,locStart,locEnd);
-	if (scTop + hei > locStart && scTop + hei < locEnd) {
-		locGap = (speed / 2) - Math.round((scTop + hei - locStart) / (locEnd - locStart) * speed); //150 ~ -150
+	if(scTop + hei > locStart && scTop + hei < locEnd) {
+		locGap = (speed/2) - Math.round((scTop + hei - locStart) / (locEnd - locStart) * speed);
 		$(".loc-wrap").css("background-position-y", locGap + "%");
-
 	}
 }
 /******************* 이벤트 설정 ********************/
