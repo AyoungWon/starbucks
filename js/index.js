@@ -1,38 +1,5 @@
-/******************* 사전지식 ********************/
-/*
-function a() {
 
-}
-function b() {
-	return "B";
-}
-var fnA = a();
-var fnB = b();
-console.log(fnA, fnB);
-
-var css = {"position": "absolute", "top": "50%", "transform": "translateY(-50%)", "font-size": "5rem", "z-index": 900, "color": "#fff"};
-var $btLeft = $('<i class="bt-lt fa fa-angle-left"></i>').appendTo(".main-wrap").css(css);
-var $btRight = $('<i class="bt-rt fa fa-angle-right"></i>').appendTo(".main-wrap").css(css);
-$btLeft.css("left", "2rem");
-$btRight.css("right", "2rem");
-*/
-
-/******************* 전역설정 ********************/
-//Slide.scale(".main-wrap", ".banner", onComplete);
-//Slide.scale(".main-wrap2", ".banner", onComplete);
-
-//var slide = new Slide(".main-wrap", ".banner", "scale", onComplete);
-
-
-
-/******************* 사용자 함수 ********************/
-/* function onComplete(prevSlide, nextSlide, container) {
-	$(prevSlide).find(".slogan").css({"opacity": 0, "transform": "scale(0.5)"});
-	$(prevSlide).find(".writer").css({"opacity": 0, "transform": "translateY(5vw)"});
-	$(nextSlide).find(".slogan").css({"opacity": 1, "transform": "scale(1)"});
-	$(nextSlide).find(".writer").css({"opacity": 1, "transform": "translateY(0)"});
-} */
-/******************* 슬라이드 직접 코딩 ********************/
+/******************* 슬라이드 코딩 ********************/
 var mainNow = 0;
 var mainSlide = $(".main-wrap > .banner");
 var mainLast = mainSlide.length - 1;
