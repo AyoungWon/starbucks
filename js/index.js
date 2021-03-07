@@ -3,16 +3,16 @@
 var mainNow = 0;
 var mainSlide = $(".main-wrap > .banner");
 var mainLast = mainSlide.length - 1;
-var mainTitles = [
-	"Coffee should be black as hell, <br>strong as death and sweet as love.",
-	"What goes best with a cup of coffee? <br>Another cup!",
-	"There's nothing sweeter <br>than a cup of bitter coffee."
+var mainPromoTitles = [
+	"스타벅스에서 꿈처럼 <br>달콤한 봄의 맛을 즐겨보세요",
+	"COSTRARICA NARAMJO <br>코스타리카 나랑호",
+	"회원 계정에 등록된 스타벅스 카드로 결제시, <br>1만원당 별 1개 즉시 추가 적립"
 ];
-var mainWriters = [
-	"Turkish Proverb", "Henry Rollins", "Rian Aditia"
+var mainPromoPeriod = [
+	"기간: 2021년 2월 16일 ~2021년 3월 15일", "기간: 2021년 2월 23일 ~2021년 4월 5일", "기간: 2021년 1월 1일 ~2021년 12월 31일"
 ];
-$(".main-wrap").find(".slogan").html(mainTitles[mainNow]);
-$(".main-wrap").find(".writer > span").html(mainWriters[mainNow]);
+$(".main-wrap").find(".slogan").html(mainPromoTitles[mainNow]);
+$(".main-wrap").find(".writer > span").html(mainPromoPeriod[mainNow]);
 mainInit();
 
 function mainInit() {
@@ -49,8 +49,8 @@ function mainAni() {
 		"opacity": 0
 	});
 	setTimeout(function () {
-		$(".main-wrap").find(".slogan").html(mainTitles[mainNow]);
-		$(".main-wrap").find(".writer > span").html(mainWriters[mainNow]);
+		$(".main-wrap").find(".slogan").html(mainPromoTitles[mainNow]);
+		$(".main-wrap").find(".writer > span").html(mainPromoPeriod[mainNow]);
 		$(".main-wrap").find(".slogan").css({
 			"transform": "scale(1)",
 			"opacity": 1
