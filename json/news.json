@@ -1,9 +1,66 @@
 {
-	"news": [
-		{"id": 1, "title": "Venenatis efficitur at sit amet lorem", "src": "../img/c-sl-004-768x512.jpg", "cont": "Nunc lacus dui, hendrerit ut ligula vitae, hendrerit aliquet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.", "date": "2020-06-18", "badge": ["Recipes", "News"], "tag": ["Recipes", "By james", "19th January 2020", "1 Comment"]},
-		{"id": 1, "title": "Integer vitae est venenatis nulla from efficitur at sit amet", "src": "../img/c-sl-005-768x512.jpg", "cont": "Maecenas non lacus eget sapien finibus mollis id vel est. Integer vitae neque et lacus libero. Nunc rutrum nisi eget nunc semper, nec aliquam lectus lorem interdum.", "date": "2020-06-18", "badge": ["Recipes", "News"], "tag": ["Recipes", "By james", "19th January 2020", "1 Comment"]},
-		{"id": 1, "title": "Cras pretium metus ac ex dictum faucibus", "src": "../img/c-sl-012-768x512.jpg", "cont": "Morbi consequat, neque tincidunt auctor mattis, libero augue molestie nulla, at dapibus urna libero nec dolor. Aliquam venenatis magna eu libero finibus malesuada.", "date": "2020-06-18", "badge": ["Recipes", "News"], "tag": ["Recipes", "By james", "19th January 2020", "1 Comment"]},
-		{"id": 1, "title": "Lorem – metus ac ex dictum faucibus", "src": "../img/c-sl-0129-768x512.jpg", "cont": "Ut eu elit vel massa malesuada ornare in id magna. Vivamus pellentesque pulvinar porta. Curabitur cursus condimentum ex non aliquam!", "date": "2020-06-18", "badge": ["Recipes", "News"], "tag": ["Recipes", "By james", "19th January 2020", "1 Comment"]},
-		{"id": 1, "title": "Vivamus pellentesque pulvinar porta", "src": "../img/c-sl-004-768x512.jpg", "cont": "Ut eu elit vel massa malesuada ornare in id magna. Vivamus pellentesque pulvinar porta. Curabitur cursus condimentum ex non aliquam!", "date": "2020-06-18", "badge": ["Recipes", "News"], "tag": ["Recipes", "By james", "19th January 2020", "1 Comment"]}
+	"news": [{
+			"id": 1,
+			"title": "MEET THE COFFEE MAN",
+			"src": "../asset/megazine01.jpg",
+			"cont": "송호섭(CEO)과의 인터뷰 : 스타벅스 리저브는 '차별화'가 아닌 스타벅스의 '핵심'",
+			"date": "2020-06-18",
+			"badge": ["Megazine", "Issue1"],
+			"tag": ["Megazine", "Starbucks", "19th January 2020", "Meet the Reserve"]
+		},
+		{
+			"id": 2,
+			"title": "MEET THE MASTER",
+			"src": "../asset/megazine02.jpg",
+			"cont": "최용석(커피 마스터)과의 인터뷰 : 커피의 시작과 끝을 살뜰히 챙기는 사람",
+			"date": "2020-06-18",
+			"badge": ["Megazine", "Issue1"],
+			"tag": ["Megazine", "Starbucks", "19th January 2020", "Meet the Reserve"]
+		},
+		{
+			"id": 3,
+			"title": "MEET THE DESIGNER",
+			"src": "../asset/megazine03.jpg",
+			"cont": "배은혜(스토어 디자이너)와의 인터뷰 : 치밀하게 준비해서 우아하게 완성하는 리저브 공간",
+			"date": "2020-06-18",
+			"badge": ["Megazine", "Issue1"],
+			"tag": ["Megazine", "Starbucks", "19th January 2020", "Meet the Reserve"]
+		},
+		{
+			"id": 4,
+			"title": "MEET THE FAN",
+			"src": "../asset/megazine04.jpg",
+			"cont": "임준교(파트너)와의 인터뷰 : 나를 알아봐 주는 스타벅스 리저브, 나만 알아보는 스타벅스 리저브",
+			"date": "2020-06-18",
+			"badge": ["Megazine", "Issue1"],
+			"tag": ["Megazine", "Starbucks", "19th January 2020", "Meet the Reserve"]
+		},
+		{
+			"id": 5,
+			"title": "풍경이 머무는 자리",
+			"src": "../asset/megazine05.jpg",
+			"cont": "남한강과 커피가 만나는 곳 : 향긍한 커피는 풍경과 함께 음미할 때 더 긴 여운을 남긴다. 그 풍경이 흐르는 강이라면, 갓 내린 커피와 얼마나 잘 어울리는지 보여주는 공간이 경기도 양평에 등장했디. 오픈 전부터 남다른 규모와 전망으로 화제를 모은 스타벅스 더양평DTR점.",
+			"date": "2020-06-18",
+			"badge": ["Megazine", "Issue2"],
+			"tag": ["Megazine", "Starbucks", "19th January 2020", "Trip to Reserve", "스타벅스 더양평DTR점" ]
+		},
+		{
+			"id": 6,
+			"title": "도심에서 떠나는 커피 여행",
+			"src": "../asset/megazine06.jpg",
+			"cont": "빌딩 숲속 커피 아지트 : 키다리 마천루와 키 작은 고옥이 공존하는 서울의 도심, 종로 한가운데 스타벅스 더종로R점이 있다. 종로의 랜드마크 종로타워 1층과 2층을 그윽한 커피 향으로 가득 채운, 서울에서 가장 큰 리저브 매장이다. 출근을 서두르는 아침이든 나른한 오후든 하루를 마무리하는 저녁이든 언제 가도 색다른 리저브 커피를 즐길 수 있는 곳",
+			"date": "2020-06-18",
+			"badge": ["Megazine", "Issue2"],
+			"tag": ["Megazine", "Starbucks", "19th January 2020", "Trip to Reserve","스타벅스 더종로R점"]
+		},
+		{
+			"id": 7,
+			"title": "커피로 시애틀을 만나는 법",
+			"src": "../asset/megazine07.jpg",
+			"cont": "서울 속 시애틀을 찾아서 : '환영합니다. 스타벅스 1호점입니다.' 커피 향 가득한 매장에 들어서는 순간 듣게 되는 경쾌한 인사말이다. 미소 띤 얼굴로 인사를 건네는 바리스타 뒤로 스타벅스 최초의 매장인 시애틀의 '파이크 플레이스'와 최초의 리저브 로스터리인 '시애틀 로스터리'가 절묘하게 연결된 벽화가 시선을 끈다.",
+			"date": "2020-06-18",
+			"badge": ["Megazine", "Issue2"],
+			"tag": ["Megazine", "Starbucks", "19th January 2020", "Trip to Reserve", "스타벅스 이대R점"]
+		}
 	]
 }
