@@ -206,7 +206,7 @@ function onMapClose() {
 
 
 /******************* menu 동적 생성  ********************/
-$.get("../json/menus.json", onMenuLoad);
+
 
 function onMenuLoad(r) {
 	var html = '';
@@ -214,7 +214,7 @@ function onMenuLoad(r) {
 		html = '<li class="menu">';
 		html += '<div class="menu-img"><img src="' + r.menus[i].src + '" class="img"></div>';
 		html += '<h3 class="menu-title rc">' + r.menus[i].title + '</h3>';
-		html += '<div class="menu-price rc">' + r.menus[i].price + '</div>';
+	//	html += '<div class="menu-price rc">' + r.menus[i].price + '</div>';
 		html += '</li>';
 		$(".menus").append(html);
 	}
@@ -298,6 +298,7 @@ function newsAni() {
 
 
 /******************* press 동적생성********************/
+
 $.get("../json/press.json", onPressLoad);
 
 function onPressLoad(r) {
@@ -404,10 +405,23 @@ function onNaviHide() {
 }
 
 
+function onCategoryClick() {
+	console.log(this.id)
+	var category = this.id
+	$(".menus").html('')
+	$.get(`../json/${category}.json`, onMenuLoad);
+	$(".menu-wrapper .category").css({"background-color":"#fff", "color":"black"})
+	$(this).css({"background-color":"black", "color":"#fff"})
+	
+}
+
 /******************* 이벤트 설정 ********************/
 $(window).resize(onResize).trigger("resize");
 $(window).scroll(onScroll).trigger("scroll");
-
+$(window).ready(function() {
+	$("#espresso").click()
+})
 $(".bt-top").click(onTop);
 $(".header .navi-bars").click(onNaviShow);
 $(".header .bt-close").click(onNaviHide);
+$(".menu-wrapper .category").click(onCategoryClick)
