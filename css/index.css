@@ -42,6 +42,10 @@ h5,
 	position: relative;
 }
 
+.title {
+	margin-bottom: 4rem;
+}
+
 .bt-yellow {
 	background-color: #e7b35a;
 	color: #fff;
@@ -54,32 +58,7 @@ h5,
 	background-color: #bb8d3f;
 }
 
-.bookmark-bar {
-	color: #e7b35a;
-	font-size: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 1rem 0 4rem 0;
-}
 
-.bookmark-bar .fa {
-	margin: 0 1rem;
-}
-
-.bookmark-bar::before {
-	width: 50px;
-	height: 5px;
-	background-color: #e7b35a;
-	content: "";
-}
-
-.bookmark-bar::after {
-	width: 50px;
-	height: 5px;
-	background-color: #e7b35a;
-	content: "";
-}
 
 .bt-top {
 	background-color: rgba(0, 0, 0, 0.4);
@@ -128,7 +107,7 @@ h5,
 	display: block;
 	content: "";
 	height: 2px;
-	background-color: #e6ac65;
+	background-color: #007142;
 	transform: translateY(28px);
 	opacity: 0;
 	transition: all 0.5s;
@@ -207,7 +186,7 @@ h5,
 }
 
 .header>.navi-mo .navi:hover {
-	color: #e6ac65;
+	color: #007142;
 }
 
 
@@ -436,18 +415,23 @@ h5,
 }
 
 /************ special-wrap ****************/
+.special-wrap {
+	background-color: #F7F6ED;
+}
+
 .special-wrap .title {
 	font-size: 3rem;
 	color: #333;
 	text-align: center;
 }
 
+
 .prd-wrapper {
 	position: relative;
 }
 
 .prd-wrapper .bt {
-	color: #e7b35a;
+	color: #fbc1a8;
 	font-size: 2.5em;
 	cursor: pointer;
 	position: absolute;
@@ -511,7 +495,7 @@ h5,
 
 .prd-stage .prd-price {
 	font-size: 1.125em;
-	color: #e7b35a;
+	color: #aaa;
 }
 
 
@@ -538,12 +522,6 @@ width: 10rem;
 text-align: center;
 border-radius: 4px;
 cursor: pointer;
-}
-
-.menu-wrap .menu-wrapper .menu-categorys li:focus {
-	background-color: #e7b35a;
-	color: #f1f1f1;
-
 }
 
 .menu-wrap .menus {
@@ -602,7 +580,7 @@ cursor: pointer;
 }
 
 .notice-wrap .bt {
-	color: #e7b35a;
+	color: #007142;
 	font-size: 2.5em;
 	cursor: pointer;
 	position: absolute;
@@ -677,7 +655,7 @@ cursor: pointer;
 }
 
 .notice-wrap .badge-date .month {
-	border-bottom: 3px solid #e7b35a;
+	border-bottom: 3px solid #007142;
 	font-weight: lighter;
 	font-size: 0.875em;
 }
@@ -698,7 +676,7 @@ cursor: pointer;
 }
 
 .notice-wrap .news-title:hover {
-	color: #e7b35a;
+	color: #007142;
 }
 
 .notice-wrap .news-tag {
@@ -745,7 +723,7 @@ cursor: pointer;
 	display: block;
 	content: "";
 	height: 3px;
-	background-color: #e6ac65;
+	background-color: #007142;
 	transform: translateY(8px);
 	width: 0;
 	transition: all 0.5s;
@@ -843,7 +821,7 @@ cursor: pointer;
 .footer-wrap .sns {
 	width: 30px;
 	height: 30px;
-	background-color: #e7b35a;
+	background-color: #007142;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -855,7 +833,7 @@ cursor: pointer;
 
 .footer-wrap .sns:hover {
 	background-color: #fff;
-	color: #e7b35a;
+	color: #007142;
 }
 
 .footer-wrap .copyright {
