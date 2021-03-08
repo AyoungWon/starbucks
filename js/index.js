@@ -93,7 +93,7 @@ function onPrdLoad(r) {
 		html = '<li class="prd">';
 		html += '	<div class="prd-img"><img src="' + r.prds[i].src + '" class="img"></div>';
 		html += '	<div class="prd-title">' + r.prds[i].title + '</div>';
-		html += '	<div class="prd-price">' + r.prds[i].price + '</div>';
+		html += '	<div class="prd-price">' + r.prds[i].titleEng + '</div>';
 		html += '</li>';
 		prds.push($(html));
 	}

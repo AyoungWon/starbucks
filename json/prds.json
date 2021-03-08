@@ -1,11 +1,13 @@
 {
 	"prds":[
-		{"id":1, "title":"Classic Cheesecake", "src":"../img/c-sl-016-800x800.jpg","price":"$3.00","link":"#"},
-		{"id":2, "title":"Chocolate Cake", "src":"../img/c-sl-014-800x800.jpg","price":"$3.50","link":"#"},
-		{"id":3, "title":"Classic Flat White", "src":"../img/c-sl-018-800x800.jpg","price":"$1.99","link":"#"},
-		{"id":4, "title":"Vegan Cheesecake", "src":"../img/c-sl-013-800x800.jpg","price":"$2.50","link":"#"},
-		{"id":5, "title":"Caramel Cappuccino", "src":"../img/c-sl-021-800x800.jpg","price":"$1.99","link":"#"},
-		{"id":6, "title":"Hot Chocolate", "src":"../img/c-sl-0125-800x800.jpg","price":"$2.99","link":"#"},
-		{"id":7, "title":"American Pancake", "src":"../img/c-sl-0129-800x800.jpg","price":"$4.50","link":"#"}
+		{"id":1, "title":"슈크림 라떼", "src":"../asset/promo_menu/promo01.jpg","titleEng":"Choux Cream Latte","link":"#"},
+		{"id":2, "title":"아이스 슈크림 라떼", "src":"../asset/promo_menu/promo02.jpg","titleEng":"Ice Choux Cream Latte","link":"#"},
+		{"id":3, "title":"슈크림 프라푸치노 위드 판나코타", "src":"../asset/promo_menu/promo03.jpg","titleEng":"Choux Cream Frappuccino with Panna Cotta","link":"#"},
+		{"id":4, "title":"핑크 용과 레모네이드", "src":"../asset/promo_menu/promo04.jpg","titleEng":"Pink Dragon Fruit Lemonade","link":"#"},
+		{"id":5, "title":"촉촉 슈크림 레이어 케이크", "src":"../asset/promo_menu/promo05.jpg","titleEng":"Choux Cream Layered Cake","link":"#"},
+		{"id":6, "title":"화이트 에그 모짜 샌드위치", "src":"../asset/promo_menu/promo06.jpg","titleEng":"White Egg Mozzarella Sandwich","link":"#"},
+		{"id":7, "title":"더블 에그 샐러드 밀 박스", "src":"../asset/promo_menu/promo07.jpg","titleEng":"Double Egg Salad Meal Box","link":"#"},
+		{"id":8, "title":"바질 토마토 크림치즈 베이글", "src":"../asset/promo_menu/promo08.jpg","titleEng":"Basil Tomato Cream Cheese Bagel","link":"#"}
+
 	]
 }
