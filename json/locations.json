@@ -1,7 +1,33 @@
 {
-	"locs": [
-		{"src": "../img/c-sl-012-1024x663.jpg", "cont": "Morbi vel nisi condimentum, efficitur orci at, vehicula velit. Maecenas ut euismod diam. Integer aliquet turpis eunis!", "addr": "421, Brooklyn, New York", "time": "9 AM / 22 PM", "tel": "+1 354 454878", "lat": "37.498744", "lon": "127.026720"},
-		{"src": "../img/c-sl-011-1024x663.jpg", "cont": "Integer iaculis justo lacus, consectetur semper massa consectetur at. Integer vitae est eget elit venenatis efficitur at sit amet ex pulvinar enim commodo semper.", "addr": "421, Brooklyn, New York", "time": "9 AM / 22 PM", "tel": "+1 354 454878", "lat": "37.554518", "lon": "126.936602"},
-		{"src": "../img/c-sl-010-1024x663.jpg", "cont": "Quisque porta felis turpis, et pulvinar enim commodo semper. Vivamus massa elit, sollicitudin non placerat ac, blandit eu risus. Curabitur fermentum lobortis arcu.", "addr": "421, Brooklyn, New York", "time": "9 AM / 22 PM", "tel": "+1 354 454878", "lat": "37.572229", "lon": "126.987115"}
+	"locs": [{
+			"src": "../asset/store_01.jpg",
+			"store": "동광주DT",
+			"cont": "바쁜 일상 속 커피 한 잔의 여유를 즐길 수 있는 스타벅스 동광주DT점 입니다.",
+			"addr": "광주광역시 북구 동문대로 148 (두암동)",
+			"time": "07:00 ~ 22:00",
+			"tel": "1522-3232",
+			"lat": "35.175674",
+			"lon": "126.927812"
+		},
+		{
+			"src": "../asset/store_02.jpg",
+			"store": "영도대교점",
+			"cont": "푸른 바다와 영도대교의 도개행사를 즐기면서 커피한잔의 휴식을 취하세요",
+			"addr": "부산광역시 영도구 태종로 39 (대교동1가)",
+			"time": "07:00 ~ 22:00",
+			"tel": "1522-3232",
+			"lat": "35.094567,",
+			"lon": "129.037134"
+		},
+		{
+			"src": "../asset/store_03.jpg",
+			"store": "곤지암ICDT",
+			"cont": "하루의 시작과 끝. 곤지암 첫 Drive Thru 매장 스타벅스 곤지암IC DT 점 입니다.",
+			"addr": "경기도 광주시 곤지암읍 경충대로 765 경충대로 76",
+			"time": "07:00 ~ 21:00",
+			"tel": "1522-3232",
+			"lat": "37.355649",
+			"lon": "127.325167"
+		}
 	]
 }
