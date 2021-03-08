@@ -393,9 +393,17 @@ h5,
 	padding: 1.75rem;
 }
 
+.loc-wrap .store > .store-name {
+	text-align: center;
+	padding: 1.5rem;
+	font-size: 1.5rem;
+}
+
 .loc-wrap .store>.photo {
 	background-color: #e6ac65;
 	cursor: pointer;
+	height: 180px;
+	overflow: hidden;
 }
 
 .loc-wrap .store>.photo>img {
@@ -413,8 +421,10 @@ h5,
 }
 
 .loc-wrap .store>div:not(.photo) {
+	display: flex;
 	color: #333;
 	padding: 0.5rem 0;
+	align-items: baseline;
 }
 
 .loc-wrap .store>.bt-map {

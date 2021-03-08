@@ -138,6 +138,7 @@ function onLocationLoad(r) {
 	var html = '';
 	for (var i in r.locs) {
 		html = '<li class="store">';
+		html += '<p class="store-name">' + r.locs[i].store + '</p>';
 		html += '<div class="photo"><img src="' + r.locs[i].src + '" class="img"></div>';
 		html += '<p class="cont">' + r.locs[i].cont + '</p>';
 		html += '<div class="addr">';
