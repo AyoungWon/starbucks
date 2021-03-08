@@ -720,11 +720,14 @@ cursor: pointer;
 }
 
 .notice-wrap .news-cont {
+	height: 6rem;
 	font-size: 1em;
 	line-height: 1.75;
 	color: #666;
 	margin: 0.5em 0;
 }
+
+
 
 .notice-wrap button {
 	border: none;
@@ -792,6 +795,9 @@ cursor: pointer;
 .press-wrap .press .logo {
 	margin-bottom: 2em;
 }
+.press-wrap .press .img {
+	height: 200px;
+}
 
 .press-wrap .press .cont {
 	color: #999;
@@ -813,18 +819,17 @@ cursor: pointer;
 }
 
 .footer-wrap .wrapper {
-	padding: 5rem;
+	padding: 2rem;
 	text-align: center;
 }
 
 .footer-wrap .footer-info {
 	display: flex;
-	flex-wrap: wrap;
-	margin: 3rem 0;
+	justify-content: space-around;
+
 }
 
 .footer-wrap .info {
-	flex: 33.3333%;
 	padding: 1em;
 	font-size: 1rem;
 }
@@ -832,7 +837,7 @@ cursor: pointer;
 .footer-wrap .footer-sns {
 	display: flex;
 	justify-content: center;
-	margin: 3rem 0;
+	margin-bottom: 1rem;
 }
 
 .footer-wrap .sns {

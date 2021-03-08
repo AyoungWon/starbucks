@@ -258,11 +258,12 @@ function onnewsLoad(r) {
 			html += '<span class="tag">' + r.news[i].tag[j] + '</span>';
 		}
 		html += '</div>';
-		html += '<div class="news-cont">' + r.news[i].cont + '</div>';
+		html += '<div class="news-cont"><p>' + r.news[i].cont + '</p></div>';
 		html += '<button class="bt-ghost bt-more">Read more <span>▶</span></button>';
 		html += '</li>';
 		newss.push($(html));
 	}
+
 	newsInit();
 }
 
@@ -272,6 +273,13 @@ function newsInit() {
 	newsArr[0] = (newsNow == 0) ? newsLast : newsNow - 1;
 	for (var i = 2; i < newsSize; i++) newsArr[i] = (newsArr[i - 1] == newsLast) ? 0 : newsArr[i - 1] + 1;
 	for (var i = 0; i < newsArr.length; i++) $(newss[newsArr[i]]).clone().appendTo(".news-wrap");
+	$('.news-cont > p').each(function(index, item){
+		if($(item).text().length > 70){
+			var textCut = $(item).text().substring( 0, 72 );
+			$(item).text( ''+ textCut + '...');
+		}
+ 
+  });
 }
 
 function onNewsLeft() {
@@ -306,7 +314,7 @@ function onPressLoad(r) {
 	var html;
 	for (var i in r.press) {
 		html = '<li class="press">';
-		html += '<div class="logo"><img src="' + r.press[i].logo + '" alt="로고"></div>';
+		html += '<div class="logo"><img src="' + r.press[i].logo + '" alt="로고" class="img"></div>';
 		html += '<div class="cont">' + r.press[i].content + '</div>';
 		html += '<div class="writer rc">' + r.press[i].writer + '</div>';
 		html += '</li>';
@@ -422,6 +430,8 @@ $(window).scroll(onScroll).trigger("scroll");
 $(window).ready(function() {
 	$("#espresso").click()
 })
+
+
 $(".bt-top").click(onTop);
 $(".header .navi-bars").click(onNaviShow);
 $(".header .bt-close").click(onNaviHide);
