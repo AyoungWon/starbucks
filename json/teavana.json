@@ -1,0 +1,60 @@
+{
+	"menus":[
+		{"id":1,"src":"../asset/drink_menu/teavana01.jpg","title":"라임 패션 티","price":"$1.50"},
+		{"id":2,"src":"../asset/drink_menu/teavana02.jpg","title":"민트 블렌드 티","price":"$1.50"},
+		{"id":3,"src":"../asset/drink_menu/teavana03.jpg","title":"얼 그레이 티","price":"$1.50"},
+		{"id":4,"src":"../asset/drink_menu/teavana04.jpg","title":"유스베리 티","price":"$1.50"},
+		{"id":5,"src":"../asset/drink_menu/teavana05.jpg","title":"유자 민트 티","price":"$1.50"},
+		{"id":6,"src":"../asset/drink_menu/teavana06.jpg","title":"잉글리쉬 브렉퍼스트 티","price":"$1.50"},
+		{"id":7,"src":"../asset/drink_menu/teavana07.jpg","title":"캐모마일 블렌드 티","price":"$1.50"},
+		{"id":8,"src":"../asset/drink_menu/teavana08.jpg","title":"히비스커스 블렌드 티","price":"$1.50"},
+		{"id":9,"src":"../asset/drink_menu/teavana09.jpg","title":"제주 유기 녹차","price":"$1.50"},
+		{"id":10,"src":"../asset/drink_menu/teavana10.jpg","title":"이그조틱 레몬 티","price":"$1.50"},
+		{"id":11,"src":"../asset/drink_menu/teavana11.jpg","title":"패션 푸르트 티","price":"$1.50"},
+		{"id":12,"src":"../asset/drink_menu/teavana12.jpg","title":"피치 젤리 티","price":"$1.50"},
+		{"id":13,"src":"../asset/drink_menu/teavana13.jpg","title":"자몽 허니 블랙 티","price":"$1.50"},
+		{"id":14,"src":"../asset/drink_menu/teavana14.jpg","title":"패션 푸르트 칵테일 티","price":"$1.50"},
+		{"id":15,"src":"../asset/drink_menu/teavana15.jpg","title":"돌체 블랙 밀크 티","price":"$1.50"},
+		{"id":16,"src":"../asset/drink_menu/teavana16.jpg","title":"제주 유기농 말차로 만든 라떼","price":"$1.50"},
+		{"id":17,"src":"../asset/drink_menu/teavana17.jpg","title":"차이 티 라떼","price":"$1.50"},
+		{"id":18,"src":"../asset/drink_menu/teavana18.jpg","title":"허니 얼 그레이 밀크 티","price":"$1.50"}
+		
+	]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
