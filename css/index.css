@@ -21,6 +21,10 @@ body {
 	-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -46,17 +50,7 @@ h5,
 	margin-bottom: 4rem;
 }
 
-.bt-yellow {
-	background-color: #e7b35a;
-	color: #fff;
-	padding: 0.75rem 1.25rem;
-	border: none;
-	cursor: pointer;
-}
 
-.bt-yellow:hover {
-	background-color: #bb8d3f;
-}
 
 
 
@@ -173,7 +167,7 @@ h5,
 	height: 32px;
 	text-align: center;
 	line-height: 32px;
-	background-color: #e6ac65;
+	background-color: #007142;
 	color: #fff;
 	cursor: pointer;
 }
@@ -408,12 +402,23 @@ h5,
 	align-items: baseline;
 }
 
-.loc-wrap .store>.bt-map {
+.bt-map {
 	margin-top: 1.5rem;
+	background-color: #007142;
+	color: #fff;
+	padding: 0.75rem 1.25rem;
+	border: none;
+	cursor: pointer;
+}
+
+
+
+.bt-map:hover {
+	background-color: #06472c;
 }
 
 .loc-wrap .store i.fa {
-	width: 2rem;
+	width: 1.5rem;
 }
 
 /************ special-wrap ****************/
@@ -529,6 +534,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 margin:0.5rem;
+transition: all 0.5s;
 }
 
 .menu-wrap .menus {
@@ -547,6 +553,7 @@ margin:0.5rem;
 	flex: 23% 0 0;
 	margin: 0 1%;
 	padding: 1.5rem 0;
+	color: #333;
 	border-bottom: 1px dashed #999;
 }
 
