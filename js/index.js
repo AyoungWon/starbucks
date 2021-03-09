@@ -143,17 +143,17 @@ function onLocationLoad(r) {
 		html += '<p class="cont">' + r.locs[i].cont + '</p>';
 		html += '<div class="addr">';
 		html += '<i class="fa fa-map-marker-alt"></i>';
-		html += '<span class="rc">Address: ' + r.locs[i].addr + '</span>';
+		html += '<span class=""> ' + r.locs[i].addr + '</span>';
 		html += '</div>';
 		html += '<div class="time">';
 		html += '<i class="fa fa-clock"></i>';
-		html += '<span class="rc">Open: ' + r.locs[i].time + '</span>';
+		html += '<span class=""> ' + r.locs[i].time + '</span>';
 		html += '</div>';
 		html += '<div class="tel">';
 		html += '<i class="fa fa-phone"></i>';
-		html += '<span class="rc">Phone: ' + r.locs[i].tel + '</span>';
+		html += '<span class=""> ' + r.locs[i].tel + '</span>';
 		html += '</div>';
-		html += '<button data-lat="' + r.locs[i].lat + '" data-lon="' + r.locs[i].lon + '" class="bt-map bt-yellow">See on Map</button>';
+		html += '<button data-lat="' + r.locs[i].lat + '" data-lon="' + r.locs[i].lon + '" class="bt-map">See on Map</button>';
 		html += '</li>';
 		$(".store-wrap").append(html);
 	}
@@ -226,7 +226,7 @@ function onMenuLoad(r) {
 /******************* news 동적생성 & 슬라이드********************/
 
 var newsNow = 0,
-	newsSize = 5,
+	newsSize = 7,
 	newsLast, newsLeft, newsTar;
 var newss = [],
 	newsArr = [];
@@ -415,13 +415,21 @@ function onNaviHide() {
 
 
 function onCategoryClick() {
-	console.log(this.id)
 	var category = this.id
 	$(".menus").html('')
 	$.get(`../json/${category}.json`, onMenuLoad);
 	$(".menu-wrapper .category").css({"background-color":"#fff", "color":"black"})
-	$(this).css({"background-color":"black", "color":"#fff"})
+	$(this).css({"background-color":"#333", "color":"#fff"})
 	
+}
+
+function onNaviClick() {
+	
+	console.log($(`section#${this.id}`))
+	var target = $(`section#${this.id}`)[0]
+	var targetY = window.pageYOffset + target.getBoundingClientRect().top;
+	window.scrollTo(0, targetY)
+
 }
 
 /******************* 이벤트 설정 ********************/
@@ -434,5 +442,6 @@ $(window).ready(function() {
 
 $(".bt-top").click(onTop);
 $(".header .navi-bars").click(onNaviShow);
+$(".header .navi").click(onNaviClick)
 $(".header .bt-close").click(onNaviHide);
 $(".menu-wrapper .category").click(onCategoryClick)
