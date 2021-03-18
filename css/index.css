@@ -203,15 +203,15 @@ h5,
 }
 
 .main-wrap>.banner1 {
-	background-image: url(../asset/promo1.jpg);
+	background-image: url(../img/promo1.jpg);
 }
 
 .main-wrap>.banner2 {
-	background-image: url(../asset/promo2.jpg);
+	background-image: url(../img/promo2.jpg);
 }
 
 .main-wrap>.banner3 {
-	background-image: url(../asset/promo3.jpg);
+	background-image: url(../img/promo3.jpg);
 }
 
 .main-wrap .slogans {
@@ -337,7 +337,6 @@ h5,
 /************loc-wrap ****************/
 .loc-wrap {
 	position: relative;
-	background-image: url(../img/c-sl-005.jpg);
 	background-size: cover;
 	background-position-x: center;
 }
@@ -755,7 +754,6 @@ transition: all 0.5s;
 /************press-wrap ****************/
 .press-wrap {
 	position: relative;
-	background-image: url(../img/c-sl-011.jpg);
 	background-size: cover;
 	background-position-x: center;
 }
