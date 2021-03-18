@@ -1,25 +1,25 @@
 {
 	"press": [{
 			"id": 1,
-			"logo": "../asset/news01.jpg",
+			"logo": "../img/news01.jpg",
 			"content": "스타벅스, 백범 김구 선생 친필 휘호 ‘천하위공(天下爲公)’ 기증",
 			"writer": ""
 		},
 		{
 			"id": 2,
-			"logo": "../asset/news02.jpg",
+			"logo": "../img/news02.jpg",
 			"content": "스타벅스, 7년간 우리 농가에 친환경 커피 퇴비 누적 4,000톤 지원",
 			"writer": ""
 		},
 		{
 			"id": 3,
-			"logo": "../asset/news03.jpg",
+			"logo": "../img/news03.jpg",
 			"content": "스타벅스, 지속가능성 생각하는 식물 기반(plant-based) 푸드 4종 출시",
 			"writer": ""
 		},
 		{
 			"id": 4,
-			"logo": "../asset/news04.jpg",
+			"logo": "../img/news04.jpg",
 			"content": "스타벅스, 아름다운재단과 함께 청년 자립돕는 보호종료청년 지원사업 전개",
 			"writer": ""
 		}
