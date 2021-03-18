@@ -424,8 +424,6 @@ function onCategoryClick() {
 }
 
 function onNaviClick() {
-	
-	console.log($(`section#${this.id}`))
 	var target = $(`section#${this.id}`)[0]
 	var targetY = window.pageYOffset + target.getBoundingClientRect().top;
 	window.scrollTo(0, targetY)
